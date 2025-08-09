@@ -1,0 +1,1 @@
+print("Hello, RAG project is ready!")
