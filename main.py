@@ -4,9 +4,14 @@ from langchain_text_splitters import CharacterTextSplitter
 from google import genai
 from qdrant_client import QdrantClient
 from qdrant_client.http import models as rest
+from dotenv import load_dotenv
+
+load_dotenv()
+
+google_api_key = os.getenv("GOOGLE_API_KEY")
 
 # Google GenAI API client
-client = genai.Client(api_key="AIzaSyARLvQFQmaMr5TwXMuiS-AD--3O9NMCzOs")
+client = genai.Client(api_key= google_api_key)
 
 # Qdrant client (local instance)
 qdrant = QdrantClient(url="http://localhost:6333")
